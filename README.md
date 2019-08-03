@@ -1,11 +1,11 @@
 # vue-business-rules-ui
 
-## Project setup
+## 项目依赖安装
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 项目开发
 ```
 npm run serve
 ```
@@ -24,6 +24,3 @@ npm run test
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

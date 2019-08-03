@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build": "npm run clear&&vue-cli-service build&&mv dist/* ./&&rimraf dist",
+    "lint": "vue-cli-service lint",
+    "clear": "rimraf js css img fonts dist index.html favicon.ico"
   },
   "dependencies": {
     "core-js": "^2.6.5",
@@ -22,6 +23,7 @@
     "babel-plugin-component": "^1.1.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "rimraf": "^2.6.3",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "vue-cli-plugin-element": "^1.0.1",
