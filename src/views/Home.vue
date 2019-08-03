@@ -1,18 +1,33 @@
-<template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+<template lang="pug">
+  .home
+    biz-rule-all-any(:pipe="pipe")
+    div(style="height: 20px;")
+    el-input(ref="input_expression" type="textarea" :disabled="false" :value="crtOriginBizRule" spellcheck="false")
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import BizRuleAdapter from '@/components/BizRule/BizRuleAdapter.js';
 
 export default {
-  name: "home",
+  name: 'home',
   components: {
-    HelloWorld
-  }
+    BizRuleAllAny: () => import('@/components/BizRule/index.vue'),
+  },
+  data() {
+    return {
+      pipe: {
+        type: 'all_any',
+        condition: 'all',
+        children: [],
+        isRoot: true,
+      },
+    };
+  },
+  computed: {
+    crtOriginBizRule() {
+      return JSON.stringify(BizRuleAdapter.cvtCustom2Origin(this.pipe));
+    },
+  },
 };
 </script>
