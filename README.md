@@ -6,10 +6,6 @@
 
 [点击查看](https://winzipsdo.github.io/vue-business-rules-ui/#/)部署于 Github Pages 的 DEMO；
 
-当进行开发时，请注释`vue.config.js`中的`publicPath`；
-
-当进行部署时，请将`vue.config.js`中的`publicPath`属性置为 github 项目名称`vue-business-rules-ui`
-
 ## 项目依赖安装
 
 ```
